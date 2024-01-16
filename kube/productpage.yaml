@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: carlavila2205103/practica_creativa2p3-productpage:latest  # Replace with your custom image reference
+        image: albertocaballero/productpage30:latest  # Replace with your custom image reference
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
