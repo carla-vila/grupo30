@@ -1,0 +1,48 @@
+##################################################################################################
+# Details service
+##################################################################################################
+
+# Definición del Service para el servicio 'details'
+apiVersion: v1
+kind: Service
+metadata:
+  name: details
+  labels:
+    app: details
+    service: details
+
+spec:
+  ports:
+  - port: 9080
+    name: http
+  selector:
+    app: details
+---
+# Definición del Deployment para el servicio 'details'
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: details-v1
+  labels:
+    app: details
+    version: v1
+spec:
+  replicas: 3 # Estableciendo el factor de replicación en 3
+  selector:
+    matchLabels:
+      app: details
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: details
+        version: v1
+    spec:
+      containers:
+      - name: details
+        image: carlavila2205103/practica_creativa2p3-details:latest # Usando la imagen especificada
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 9080
+        securityContext:
+          runAsUser: 1000
