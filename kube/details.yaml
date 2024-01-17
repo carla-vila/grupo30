@@ -39,7 +39,7 @@ spec:
     spec:
       containers:
       - name: details
-        image: albertocaballero/details30:latest # Usando la imagen especificada
+        image: albertocaballero/30details:latest # Usando la imagen especificada
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
