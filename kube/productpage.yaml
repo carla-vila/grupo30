@@ -37,7 +37,7 @@ spec:
     spec:
       containers:
       - name: productpage
-        image: albertocaballero/productpage30:latest  # Replace with your custom image reference
+        image: albertocaballero/30productpage:latest  # Replace with your custom image reference
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 9080
